@@ -67,11 +67,12 @@ const handleIssueUpdate = async (issueId, updates) => {
     formData.append('title', titleForGemini)
     formData.append('description', updates.description || '')
 
-  const res = await fetch('/api/gemini-service', {
+      const res = await fetch(`${ import.meta.env.VITE_API_BASE_URL } / api / gemini - service`, {
   method: 'POST',
   body: formData,
   })
-    const data = await res.json()
+      const data = await res.json()
+
 
     if (!res.ok) {
       throw new Error(data?.error || 'Gemini failed')
