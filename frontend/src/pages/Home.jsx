@@ -104,7 +104,7 @@ const handleSingleSubmission = async (issue) => {
   setIsLoading(true)
 
   try {
-    const githubResponse = await fetch('/api/github/issues', {
+      const githubResponse = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/github/issues`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -150,7 +150,8 @@ const handleAllSubmissions = async (allSubmittedIssues) => {
     const createdIssues = []
 
     for (const issue of allSubmittedIssues) {
-      const res = await fetch('/api/github/issues', {
+        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/github/issues`, {
+
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
