@@ -1,6 +1,7 @@
 import dotenv from "dotenv";
 import express from "express";
 import path from "node:path";
+import cors from "cors";
 import { fileURLToPath } from "node:url";
 import geminiRoutes  from "./routes/geminiRoutes.js";
 import  githubRoutes  from "./routes/githubRoutes.js";
@@ -14,6 +15,7 @@ dotenv.config({ path: path.join(currentDirPath, ".env") });
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
+app.use(cors());
     app.use(express.json());
 
     app.get("/", (_req, res) => {
