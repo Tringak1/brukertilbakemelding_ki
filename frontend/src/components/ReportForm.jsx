@@ -191,7 +191,7 @@ function ReportForm({ issues, setIssues, onSubmit, setIsLoading, setLoadingText 
               console.log("sender request...")
 
 
-              const response = await fetch(`${import.meta.env.VITE_API_BASE_URL} / api / gemini - service`, {
+              const response = await fetch(`${import.meta.env.VITE_API_BASE_URL} /api/gemini-service`, {
                   method: "POST",
                   body: formData,
               })
