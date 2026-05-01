@@ -1,7 +1,7 @@
 import { githubRequest, hasGitHubToken } from "../services/githubService.js";
 
-const GITHUB_OWNER = process.env.GITHUB_OWNER || "hltnina";
-const GITHUB_REPO = process.env.GITHUB_REPO || "brukertilbakemelding_KI";
+const GITHUB_OWNER = process.env.GITHUB_OWNER || "Tringak1";
+const GITHUB_REPO = process.env.GITHUB_REPO || "brukertilbakemelding_ki";
 
 export async function createIssue(req, res) {
   const {
